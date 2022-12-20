@@ -16,8 +16,8 @@ double[,] CreateArray(int rows, int columns)
         while (j < columns)
         {
             k = new Random().Next(0, 2);  // Этот коэффициент определяет будет ли получаемый элемент массива целочисленным или нет
-            
-            array[i, j] = new Random().Next(-10, 11) + k * Math.Round(rnd.NextDouble(), 2);
+
+            array[i, j] = new Random().Next(-10, 11) + k * Math.Round(rnd.NextDouble(), 1);
             j++;
         }
         i++;
@@ -41,10 +41,11 @@ void PrintArray(double[,] array)
     }
 }
 
-Console.WriteLine("The computer selects the size of the array... ");
+Console.Write("Enter the number of rows... ");
+int rows = int.Parse(Console.ReadLine()!);
+Console.Write("Enter the number of columns... ");
+int columns = int.Parse(Console.ReadLine()!);
 Console.WriteLine("The computer selects the elements of the array... ");
-int rows = new Random().Next(2, 11);
-int columns = new Random().Next(2, 11);
 double[,] array = new double[rows, columns];
 array = CreateArray(rows, columns);
 Console.WriteLine("The computer prints the array... ");
