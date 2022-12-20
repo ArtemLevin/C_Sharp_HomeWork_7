@@ -6,6 +6,7 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
+// method to create an array
 
 int[,] CreateArray(int rows, int columns)
 {
@@ -25,6 +26,8 @@ int[,] CreateArray(int rows, int columns)
     return array;
 }
 
+// method to print an array
+
 void PrintArray(int[,] array)
 {
     int i = 0, j = 0;
@@ -41,6 +44,8 @@ void PrintArray(int[,] array)
     }
 }
 
+// request to enter initial data
+
 Console.Write("Enter the number of rows... ");
 int rows = int.Parse(Console.ReadLine()!);
 Console.Write("Enter the number of columns... ");
@@ -51,6 +56,8 @@ array = CreateArray(rows, columns);
 Console.WriteLine("The computer prints the array... ");
 Console.WriteLine(" ");
 PrintArray(array);
+
+// search for average in each column
 
 void AverageInColumn(int[,] array)
 {
